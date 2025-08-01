@@ -86,11 +86,11 @@
                 </p>
                 <div class="flex flex-row items-center gap-4">
                     <a href="https://equino-growt.vercel.app/login" target="_blank"
-                        class="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-teal-700 transition">
+                        class="border border-white text-white md:px-6 px-3 md:py-3 py-2 rounded-lg hover:bg-white hover:text-teal-700 transition">
                         Descargar App
                     </a>
                     <a href="#about"
-                        class="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-teal-700 transition">
+                        class="border border-white text-white md:px-6 px-3 md:py-3 py-2 rounded-lg hover:bg-white hover:text-teal-700 transition">
                         Conocer más
                     </a>
                 </div>
@@ -271,7 +271,8 @@
             </div>
         </section>
 
-        <section id="comunity" class="bg-teal-700 w-full relative">
+        <!-- Comunidad -->
+        <section id="comunity" class="bg-teal-700 w-full relative overflow-hidden">
             <div class="max-w-6xl mx-auto px-4">
                 <h2 class="text-2xl md:text-3xl font-semibold text-center text-white mb-8">
                     Nuestra comunidad
@@ -279,14 +280,16 @@
             </div>
 
             <div class="relative overflow-hidden pb-8">
-                <div id="galeriaTrack" class="flex items-center animate-scroll">
+                <div id="galeriaTrack" class="flex w-max animate-slide">
+                    <!-- Galería duplicada para efecto infinito -->
                     <img src="img/influencer2.png" class="h-[400px] object-cover shadow-md" />
                     <img src="img/influencer.png" class="h-[400px] object-cover shadow-md" />
                     <img src="img/LaRural.png" class="h-[400px] object-cover shadow-md" />
                     <img src="img/Cartel.png" class="h-[400px] object-cover shadow-md" />
                     <img src="img/Stand-Gente.png" class="h-[400px] object-cover shadow-md" />
-                    <!-- Duplicados -->
-                    <img src="img/Cartel2.png" class="h-[400px] object-cover shadow-md" />
+
+                    <!-- Duplicado -->
+                    <img src="img/influencer2.png" class="h-[400px] object-cover shadow-md" />
                     <img src="img/influencer.png" class="h-[400px] object-cover shadow-md" />
                     <img src="img/LaRural.png" class="h-[400px] object-cover shadow-md" />
                     <img src="img/Cartel.png" class="h-[400px] object-cover shadow-md" />

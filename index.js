@@ -154,16 +154,36 @@ window.addEventListener('load', () => {
 /* Galeria */
 const galeriaTrack = document.getElementById("galeriaTrack");
 const imagenes = galeriaTrack.children;
+
 let current = 0;
+let autoScroll;
 
 function moverGaleria() {
   current++;
+
   if (current >= imagenes.length) {
-    current = 0;
+    // Esperamos un momento antes de reiniciar para que se vea la última
+    clearInterval(autoScroll);
+    setTimeout(() => {
+      current = 0;
+      galeriaTrack.style.transition = "none"; // quitar transición para volver al inicio instantáneo
+      galeriaTrack.style.transform = `translateX(0px)`;
+
+      // Re-habilitar transición luego de un frame
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          galeriaTrack.style.transition = "transform 0.7s ease-in-out";
+          autoScroll = setInterval(moverGaleria, 3000);
+        });
+      });
+    }, 3000); // esperar 3s mostrando la última imagen
+    return;
   }
 
   const offset = imagenes[current].offsetLeft;
   galeriaTrack.style.transform = `translateX(-${offset}px)`;
 }
 
-setInterval(moverGaleria, 3000); // cada 3 segundos
+// Iniciar el scroll automático
+galeriaTrack.style.transition = "transform 0.7s ease-in-out";
+autoScroll = setInterval(moverGaleria, 3000);
